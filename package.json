@@ -1,0 +1,29 @@
+{
+  "name": "html-to-vdom",
+  "version": "0.0.1",
+  "description": "Converts html into a vtree",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TimBeyer/html-to-vdom.git"
+  },
+  "author": "Tim Beyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimBeyer/html-to-vdom/issues"
+  },
+  "homepage": "https://github.com/TimBeyer/html-to-vdom",
+  "dependencies": {
+    "bluebird": "^2.2.2",
+    "htmlparser": "^1.7.7",
+    "lodash": "^2.4.1",
+    "vtree": "0.0.14"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "chai-as-promised": "^4.1.1"
+  }
+}
