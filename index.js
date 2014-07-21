@@ -1,2 +1,2 @@
-var convertHTML = require('lib/html-to-vdom');
+var convertHTML = require('./lib/html-to-vdom');
 module.exports = convertHTML;
