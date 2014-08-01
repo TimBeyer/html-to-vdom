@@ -1,8 +1,4 @@
-var htmlparserToVdom = require('../../lib/htmlparser-to-vdom');
-var parseHTML = require('../../lib/parse-html');
 var convertHTML = require('../../lib/html-to-vdom');
-
-var VNode = require('vtree/vnode');
 
 describe('htmlparser-to-vdom', function () {
 
@@ -14,7 +10,7 @@ describe('htmlparser-to-vdom', function () {
 
             return convertHTML(html).then(function (converted) {
                 converted.tagName.should.equal('div');
-            })
+            });
         });
 
         it('parses a div with an ID correctly', function () {
@@ -23,8 +19,7 @@ describe('htmlparser-to-vdom', function () {
 
             return convertHTML(html).then(function (converted) {
                 converted.properties.id.should.equal('test');
-
-            })
+            });
         });
 
         it('parses a div with classes correctly', function () {
@@ -32,8 +27,8 @@ describe('htmlparser-to-vdom', function () {
             var html = '<div class="foo bar"></div>';
 
             return convertHTML(html).then(function (converted) {
-                converted.properties.className.should.equal('foo bar')
-            })
+                converted.properties.className.should.equal('foo bar');
+            });
         });
 
         it('parses an input with tabIndex correctly', function () {
@@ -41,8 +36,8 @@ describe('htmlparser-to-vdom', function () {
             var html = '<input tabIndex="1"></input>';
 
             return convertHTML(html).then(function (converted) {
-                converted.properties.tabIndex.should.equal("1");
-            })
+                converted.properties.tabIndex.should.equal('1');
+            });
         });
     });
 
