@@ -25,7 +25,8 @@
         "afterEach",
         "it",
         "sinon",
-        "should"
+        "should",
+        "Promise"
     ],
  
  
