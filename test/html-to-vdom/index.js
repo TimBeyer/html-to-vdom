@@ -123,4 +123,14 @@ describe('htmlparser-to-vdom', function () {
         });
     });
 
+    describe('when converting a label containing the `for` attribute', function () {
+        it('sets the htmlFor attribute correspondingly', function () {
+            var html = '<label for="foobar"></label>';
+            return convertHTML(html).then(function (converted) {
+                should.exist(converted.properties.htmlFor);
+                converted.properties.htmlFor.should.eql('foobar');
+            });
+        });
+    });
+
 });
