@@ -133,4 +133,13 @@ describe('htmlparser-to-vdom', function () {
         });
     });
 
+    describe('when converting a label not containing the `for` attribute', function () {
+        it('does not set the htmlFor attribute correspondingly', function () {
+            var html = '<label></label>';
+            return convertHTML(html).then(function (converted) {
+                should.not.exist(converted.properties.htmlFor);
+            });
+        });
+    });
+
 });
