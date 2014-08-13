@@ -1,4 +1,4 @@
-html-to-vdom
+html-to-vdom [![Build Status](https://travis-ci.org/TimBeyer/html-to-vdom.svg?branch=master)](https://travis-ci.org/TimBeyer/html-to-vdom)
 ============
 
 About
