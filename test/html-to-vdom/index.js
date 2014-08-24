@@ -142,4 +142,15 @@ describe('htmlparser-to-vdom', function () {
         });
     });
 
+    describe('when converting HTML containing html entities', function () {
+        it('converts them back to characters', function () {
+            var html = '<span>&lt;a href&equals;&quot;foobar.com&quot;&gt;test&lt;&sol;a&gt;</span>';
+            return convertHTML(html).then(function (converted) {
+                converted.tagName.should.eql('span');
+                converted.children.length.should.eql(1);
+                converted.children[0].text.should.eql('<a href="foobar.com">test</a>');
+            })
+        });
+    })
+
 });

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/TimBeyer/html-to-vdom",
   "dependencies": {
     "bluebird": "^2.2.2",
+    "ent": "^2.0.0",
     "htmlparser": "^1.7.7",
     "lodash": "^2.4.1",
     "vtree": "0.0.14"
