@@ -149,8 +149,20 @@ describe('htmlparser-to-vdom', function () {
                 converted.tagName.should.eql('span');
                 converted.children.length.should.eql(1);
                 converted.children[0].text.should.eql('<a href="foobar.com">test</a>');
-            })
+            });
         });
+    });
+
+    describe('when converting HTML containing html entities in placeholder, alt or title', function () {
+        it('converts them to characters', function () {
+            var html = '<input type="text" placeholder="&quot;test&quot;" alt="&quot;test&quot;" title="&quot;test&quot;">';
+            return convertHTML(html).then(function (converted) {
+                converted.tagName.should.eql('input');
+                converted.properties.placeholder.should.eql('"test"');
+                converted.properties.alt.should.eql('"test"');
+                converted.properties.title.should.eql('"test"');
+            });
+        })
     })
 
 });
