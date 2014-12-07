@@ -16,11 +16,13 @@ Usage
 var convertHTML = require('html-to-vdom');
 var html = '<div>Foobar</div>';
 
-convertHTML(html).then(function (vTree) { 
-    // do something with your tree
-    var createElement = require('virtual-dom/create-element');
-    var el = createElement(vTree);
-    document.body.appendChild(el);
-});
+var vtree = convertHTML(html);
+var createElement = require('virtual-dom/create-element');
+var el = createElement(vTree);
+document.body.appendChild(el);
 ```
 
+Credits
+-------
+
+Thanks to [@mattferrin](https://github.com/mattferrin) for noticing that promises could be removed from the API and contributing a PR to do so.
