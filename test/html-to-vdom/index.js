@@ -8,7 +8,7 @@ describe('htmlparser-to-vdom', function () {
 
             var html = '<div></div>';
 
-            var converted = convertHTML(html)
+            var converted = convertHTML(html);
             converted.tagName.should.equal('div');
         });
 
@@ -150,5 +150,5 @@ describe('htmlparser-to-vdom', function () {
             converted.properties.alt.should.eql('"test"');
             converted.properties.title.should.eql('"test"');
         });
-    })
+    });
 });
