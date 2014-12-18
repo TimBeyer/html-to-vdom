@@ -19,12 +19,12 @@
   "dependencies": {
     "ent": "^2.0.0",
     "htmlparser2": "^3.8.2",
-    "lodash": "^2.4.1",
-    "vtree": "0.0.21"
+    "lodash": "^2.4.1"
   },
   "devDependencies": {
     "chai": "^1.9.1",
     "chai-as-promised": "^4.1.1",
-    "mocha": "^1.21.4"
+    "mocha": "^1.21.4",
+    "virtual-dom": "0.0.23"
   }
 }

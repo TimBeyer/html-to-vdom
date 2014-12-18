@@ -1,4 +1,10 @@
-var convertHTML = require('../../lib/html-to-vdom');
+var VNode = require('virtual-dom/vnode/vnode');
+var VText = require('virtual-dom/vnode/vtext');
+
+var convertHTML = require('../../index')({
+    VNode: VNode,
+    VText: VText
+});
 
 describe('htmlparser-to-vdom', function () {
 
