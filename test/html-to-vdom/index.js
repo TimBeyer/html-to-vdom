@@ -41,6 +41,19 @@ describe('htmlparser-to-vdom', function () {
             var converted = convertHTML(html);
             converted.properties.tabIndex.should.equal('1');
         });
+
+        it('parses an div with styles correctly', function () {
+
+            var html = '<div style="top: -7px; left: -6px; background: rgb(0,0,132);"></input>';
+            var styles = {
+                top: '-7px',
+                left: '-6px',
+                background: 'rgb(0,0,132)'
+            };
+
+            var converted = convertHTML(html);
+            converted.properties.style.should.deep.equal(styles);
+        });
     });
 
     describe('when converting a tag with data attributes', function () {
