@@ -44,7 +44,7 @@ describe('htmlparser-to-vdom', function () {
 
         it('parses a div with 1 style correctly', function () {
 
-            var html = '<div style="top: -7px;"></input>';
+            var html = '<div style="top: -7px;"></div>';
             var styles = {
                 top: '-7px'
             };
@@ -55,7 +55,7 @@ describe('htmlparser-to-vdom', function () {
 
         it('parses a div with 1 style without trailing semicolon correctly', function () {
 
-            var html = '<div style="top: -7px"></input>';
+            var html = '<div style="top: -7px"></div>';
             var styles = {
                 top: '-7px'
             };
@@ -66,7 +66,7 @@ describe('htmlparser-to-vdom', function () {
 
         it('parses a div with styles correctly', function () {
 
-            var html = '<div style="top: -7px; left: -6px; background: rgb(0,0,132);"></input>';
+            var html = '<div style="top: -7px; left: -6px; background: rgb(0,0,132);"></div>';
             var styles = {
                 top: '-7px',
                 left: '-6px',
@@ -79,7 +79,7 @@ describe('htmlparser-to-vdom', function () {
 
         it('parses a div with styles without trailing semicolon correctly', function () {
 
-            var html = '<div style="top: -7px; left: -6px; background: rgb(0,0,132)"></input>';
+            var html = '<div style="top: -7px; left: -6px; background: rgb(0,0,132)"></div>';
             var styles = {
                 top: '-7px',
                 left: '-6px',
@@ -92,7 +92,7 @@ describe('htmlparser-to-vdom', function () {
 
         it('parses a div with styles correctly when spaces are missing', function () {
 
-            var html = '<div style="top:-7px;left:-6px;background:rgb(0,0,132);"></input>';
+            var html = '<div style="top:-7px;left:-6px;background:rgb(0,0,132);"></div>';
             var styles = {
                 top: '-7px',
                 left: '-6px',
@@ -105,7 +105,7 @@ describe('htmlparser-to-vdom', function () {
 
         it('parses a div with styles correctly when spaces are abundant', function () {
 
-            var html = '<div style="   top:  -7px  ;    left :  -6px ;   background :  rgb( 0 , 0 , 132 )  ;  "></input>';
+            var html = '<div style="   top:  -7px  ;    left :  -6px ;   background :  rgb( 0 , 0 , 132 )  ;  "></div>';
             var styles = {
                 top: '-7px',
                 left: '-6px',
