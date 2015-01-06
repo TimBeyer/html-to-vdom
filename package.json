@@ -1,6 +1,6 @@
 {
   "name": "html-to-vdom",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Converts html into a vtree",
   "main": "index.js",
   "scripts": {
