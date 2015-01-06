@@ -36,4 +36,5 @@ document.body.appendChild(el);
 Credits
 -------
 
-Thanks to [@mattferrin](https://github.com/mattferrin) for noticing that promises could be removed from the API and contributing a PR to do so.
+Thanks to [@mattferrin](https://github.com/mattferrin) for noticing that promises could be removed from the API and contributing a PR to do so.  
+Thanks to [@tiagorg](https://github.com/tiagorg) for contributing a PR for style attribute parsing.
