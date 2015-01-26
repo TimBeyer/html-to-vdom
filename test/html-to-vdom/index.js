@@ -195,6 +195,23 @@ describe('htmlparser-to-vdom', function () {
         });
     });
 
+    describe('when specifying a custom method for key', function () {
+        it('sets key when specified via mapTagToKey', function () {
+            var keyedConvertHTML = require('../../index')({
+                VNode: VNode,
+                VText: VText,
+                mapTagToKey: function (tag) {
+                    return tag.attribs.id;
+                }
+            });
+
+            var html = '<div id="key1">Test</div>';
+            var converted = keyedConvertHTML(html);
+            
+            converted.key.should.eql('key1');
+        });
+    });
+
     describe('when converting a label containing the `for` attribute', function () {
         it('sets the htmlFor attribute correspondingly', function () {
             var html = '<label for="foobar"></label>';
