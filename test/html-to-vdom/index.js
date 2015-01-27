@@ -199,15 +199,35 @@ describe('htmlparser-to-vdom', function () {
         it('sets key when specified via mapTagToKey', function () {
             var keyedConvertHTML = require('../../index')({
                 VNode: VNode,
-                VText: VText,
-                mapTagToKey: function (tag) {
-                    return tag.attribs.id;
+                VText: VText
+            });
+
+            var html = '<div id="key1">Test</div>';
+            var converted = keyedConvertHTML(html, {
+                getVNodeKey: function (attribs) {
+                    return attribs.id;
+                }});
+            
+            should.exist(converted.key);
+            converted.key.should.eql('key1');
+        });
+
+        it('allows binding value of getVNodeKey in convertHTML by swapping arguments', function(){
+            var keyedConvertHTML = require('../../index')({
+                VNode: VNode,
+                VText: VText
+            });
+
+            keyedConvertHTML = keyedConvertHTML.bind(null, {
+                getVNodeKey: function (attribs) {
+                    return attribs.id;
                 }
             });
 
             var html = '<div id="key1">Test</div>';
             var converted = keyedConvertHTML(html);
             
+            should.exist(converted.key);
             converted.key.should.eql('key1');
         });
     });
