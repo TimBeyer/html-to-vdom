@@ -33,6 +33,34 @@ var el = createElement(vTree);
 document.body.appendChild(el);
 ```
 
+#### Specifying a key
+In order for `virtual-dom` to detect moves it needs a key. To specify your own custom method of finding a key pass in a method that takes the current tag and returns the key.
+
+```javascript
+var convertHTML = require('html-to-vdom')({
+    VNode: VNode,
+    VText: VText
+});
+
+convertHTML({
+    getVNodeKey: function (attributes) {
+        return attributes.id;
+    }
+}, '<div id="foo"></div>');
+```
+
+If you have a single key method you can also pass the options first, allowing you to create a single bound method for all key lookups:
+
+```javascript
+var convertHTMLWithKey = convertHTML.bind(null, {
+    getVNodeKey: function (attributes) {
+        return attributes.id;
+    }   
+});
+
+convertHTMLWithKey('<div id="foo"></div>');
+```
+
 Credits
 -------
 
