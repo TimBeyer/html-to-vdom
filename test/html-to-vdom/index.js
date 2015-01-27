@@ -203,16 +203,16 @@ describe('htmlparser-to-vdom', function () {
             });
 
             var html = '<div id="key1">Test</div>';
-            var converted = keyedConvertHTML(html, {
+            var converted = keyedConvertHTML({
                 getVNodeKey: function (attribs) {
                     return attribs.id;
-                }});
+                }}, html);
             
             should.exist(converted.key);
             converted.key.should.eql('key1');
         });
 
-        it('allows binding value of getVNodeKey in convertHTML by swapping arguments', function(){
+        it('allows binding value of getVNodeKey in convertHTML', function(){
             var keyedConvertHTML = require('../../index')({
                 VNode: VNode,
                 VText: VText

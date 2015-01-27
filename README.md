@@ -42,11 +42,11 @@ var convertHTML = require('html-to-vdom')({
     VText: VText
 });
 
-convertHTML('<div id="foo"></div>', {
+convertHTML({
     getVNodeKey: function (attributes) {
         return attributes.id;
     }
-});
+}, '<div id="foo"></div>');
 ```
 
 If you have a single key method you can also pass the options first, allowing you to create a single bound method for all key lookups:
