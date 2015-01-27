@@ -43,9 +43,9 @@ var convertHTML = require('html-to-vdom')({
 });
 
 convertHTML('<div id="foo"></div>', {
-	getVNodeKey: function (attributes) {
-		return attributes.id;
-	}
+    getVNodeKey: function (attributes) {
+        return attributes.id;
+    }
 });
 ```
 
@@ -53,9 +53,9 @@ If you have a single key method you can also pass the options first, allowing yo
 
 ```javascript
 var convertHTMLWithKey = convertHTML.bind(null, {
-	getVNodeKey: function (attributes) {
-		return attributes.id;
-	}	
+    getVNodeKey: function (attributes) {
+        return attributes.id;
+    }   
 });
 
 convertHTMLWithKey('<div id="foo"></div>');
