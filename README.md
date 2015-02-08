@@ -10,6 +10,8 @@ It's used in conjunction with [virtual-dom](https://github.com/Matt-Esch/virtual
 Note
 ----
 
+As of v0.5.1, `html-to-vdom` no longer supports browsers without a full ES5 implementation.
+
 As of v0.3.0, the VNode and VText classes need to be passed in during library initialization from the `virtual-dom` module you are using.  
 This is to reduce incompatibilties you might have due to depending on a different version of `virtual-dom` than the one this library would use. 
 
@@ -64,6 +66,8 @@ convertHTMLWithKey('<div id="foo"></div>');
 Credits
 -------
 
-Thanks to [@mattferrin](https://github.com/mattferrin) for noticing that promises could be removed from the API and contributing a PR to do so.  
-Thanks to [@tiagorg](https://github.com/tiagorg) for contributing a PR for style attribute parsing.  
-Thanks to [@dariusriggins](https://github.com/dariusriggins) for adding VNode key support.
+Thanks to:  
+* [@mattferrin](https://github.com/mattferrin) for noticing that promises could be removed from the API and contributing a PR to do so
+* [@tiagorg](https://github.com/tiagorg) for contributing a PR for style attribute parsing
+* [@dariusriggins](https://github.com/dariusriggins) for adding VNode key support
+* [@jsyang](https://github.com/jsyang) for removing the `lodash` dependency for a leaner build and [improved performance](http://jsperf.com/html-to-vdom-lodash-vs-native)
