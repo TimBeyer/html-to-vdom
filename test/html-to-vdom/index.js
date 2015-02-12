@@ -132,6 +132,20 @@ describe('htmlparser-to-vdom', function () {
             converted.properties['data-test'].should.eql('foobar');
         });
 
+        it('converts a single hyphenated data attribute correctly', function () {
+
+            var html = '<div data-test-data="foobar"></div>';
+
+            var converted = convertHTML(html);
+
+            should.exist(converted.properties.dataset.testData);
+            converted.properties.dataset.testData.should.eql('foobar');
+
+            should.exist(converted.properties['data-test-data']);
+            converted.properties['data-test-data'].should.eql('foobar');
+
+        });
+
          it('converts multiple data attributes correctly', function () {
 
             var html = '<div data-test="foobar" data-foobar="test"></div>';
