@@ -8,8 +8,25 @@ var convertHTML = require('../../index')({
 
 describe('htmlparser-to-vdom', function () {
 
-    describe('when converting a tag', function () {
+    describe('when converting a single text node', function () {
+        it('parses the text node correctly', function () {
+            var html = 'test';
 
+            var converted = convertHTML(html);
+            converted.text.should.eql('test');
+        });
+    });
+
+    describe('when converting multiple sibling nodes without a wrapper', function () {
+        it('throws', function () {
+            var html = '    <div></div>';
+
+            should.throw(convertHTML.bind(null, html), 'Input must always have only one root node. You cannot convert multiple siblings without a wrapping tag around them.');
+        });
+
+    });
+
+    describe('when converting a tag', function () {
         it('parses a plain div correctly', function () {
 
             var html = '<div></div>';
