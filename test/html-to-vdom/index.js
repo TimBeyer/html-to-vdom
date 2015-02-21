@@ -183,6 +183,24 @@ describe('htmlparser-to-vdom', function () {
         });
     });
 
+    describe('when converting a tag with a custom attributes',function(){
+        it('parses an item with a custom attribute correctly', function () {
+
+            var html = '<div e-custom="testing"></div>';
+
+            var converted = convertHTML(html);
+            converted.properties['e-custom'].should.eql('testing');
+        });
+
+        it('parses an item with a custom attribute without a value correctly', function () {
+
+            var html = '<div e-custom></div>';
+
+            var converted = convertHTML(html);
+            should.exist(converted.properties['e-custom']);
+        });
+    });
+
     describe('when converting a tag containing text', function () {
         it('converts to a tag with a child VText node correctly', function () {
             var html = '<div>Test</div>';
