@@ -183,7 +183,7 @@ describe('htmlparser-to-vdom', function () {
         });
     });
 
-    describe('when converting a tag with a custom attributes',function(){
+    describe('when converting a tag with a custom attributes', function () {
         it('parses an item with a custom attribute correctly', function () {
 
             var html = '<div e-custom="testing"></div>';
@@ -198,6 +198,15 @@ describe('htmlparser-to-vdom', function () {
 
             var converted = convertHTML(html);
             should.exist(converted.properties.attributes['e-custom']);
+        });
+    });
+
+    describe('when converting a tag with a camelCase valid property', function () {
+        it('parses correctly when given an all lowercase string', function () {
+            var html = '<div contenteditable></div>';
+
+            var converted = convertHTML(html);
+            should.exist(converted.properties.contenteditable);
         });
     });
 
