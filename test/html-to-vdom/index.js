@@ -300,4 +300,59 @@ describe('htmlparser-to-vdom', function () {
             converted.properties.title.should.eql('"test"');
         });
     });
+
+    describe('when converting HTML containing a script tag', function () {
+        it('converts to a virtualdom node', function () {
+            var html = '<div><script src="foo.js">alert("bar!");</script></div>';
+            var converted = convertHTML(html);
+            var script = converted.children[0];
+            should.exist(script);
+            script.tagName.should.eql('script');
+            script.children.length.should.eql(1);
+            script.children[0].text.should.eql('alert("bar!");');
+        });
+    });
+
+    describe('when converting HTML containing a style tag', function () {
+        it('converts to a virtualdom node', function () {
+            var html = '<div><style>h1 {color:red;} p {color:blue;} </style></div>';
+            var converted = convertHTML(html);
+            var script = converted.children[0];
+            should.exist(script);
+            script.tagName.should.eql('style');
+            script.children.length.should.eql(1);
+            script.children[0].text.should.eql('h1 {color:red;} p {color:blue;} ');
+        });
+    });
+
+    describe('when converting HTML containing CDATA', function () {
+        it('returns an empty string instead (cdata is unsupported)', function () {
+            var html = '<![CDATA[ Within this Character Data block I can\
+                        use double dashes as much as I want (along with <, &, \', and ")\
+                        *and* %MyParamEntity; will be expanded to the text\
+                        "Has been expanded" ... however, I can\'t use\
+                        the CEND sequence (if I need to use it I must escape one of the\
+                        brackets or the greater-than sign).\
+                        ]]>';
+            var converted = convertHTML(html);
+            converted.text.should.eql('');
+        });
+    });
+
+    describe('when converting HTML containing a directive', function () {
+        it('returns an empty string instead (directives are unsupported)', function () {
+            var html = '<!DOCTYPE html>';
+            var converted = convertHTML(html);
+            converted.text.should.eql('');
+        });
+    });
+
+    describe('when converting HTML containing a comment', function () {
+        it('returns an empty string instead (comments are unsupported)', function () {
+            var html = '<div><!-- some comment --></div>';
+            var converted = convertHTML(html);
+            var comment = converted.children[0];
+            comment.text.should.eql('');
+        });
+    });
 });
