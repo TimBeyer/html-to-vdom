@@ -72,3 +72,4 @@ Thanks to:
 * [@dariusriggins](https://github.com/dariusriggins) for adding VNode key support
 * [@jsyang](https://github.com/jsyang) for removing the `lodash` dependency for a leaner build and [improved performance](http://jsperf.com/html-to-vdom-lodash-vs-native)
 * [@bregenspan](https://github.com/bregenspan) for making the dataset conversion standards-compliant
+* [@jesseditson](https://github.com/jesseditson) for adding `<script>` and `<style>` tag support
