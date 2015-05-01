@@ -133,6 +133,14 @@ describe('htmlparser-to-vdom', function () {
             converted.properties.style.should.deep.equal(styles);
         });
 
+        it('parses a div with camel case attribute correctly', function () {
+
+            var html = '<div fooBar="hi"></div>';
+
+            var converted = convertHTML(html);
+            converted.properties.fooBar.should.equal('hi');
+        });
+
     });
 
     describe('when converting a tag with data attributes', function () {
