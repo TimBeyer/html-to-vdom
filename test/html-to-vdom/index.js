@@ -18,10 +18,13 @@ describe('htmlparser-to-vdom', function () {
     });
 
     describe('when converting multiple sibling nodes without a wrapper', function () {
-        it('throws', function () {
-            var html = '    <div></div>';
+        it('returns an array of vnodes', function () {
+            var html = '<div id="foo"></div><div id="bar"></div>';
 
-            should.throw(convertHTML.bind(null, html), 'Input must always have only one root node. You cannot convert multiple siblings without a wrapping tag around them.');
+            var converted = convertHTML(html);
+            converted.should.be.an('array');
+            converted[0].properties.id.should.equal('foo');
+            converted[1].properties.id.should.equal('bar');
         });
 
     });
