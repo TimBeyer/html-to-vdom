@@ -4,7 +4,8 @@
   "description": "Converts html into a vtree",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "test-coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   "devDependencies": {
     "chai": "^1.9.1",
     "chai-as-promised": "^4.1.1",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.17",
     "mocha": "^1.21.4",
     "virtual-dom": "2.0.1"
   }

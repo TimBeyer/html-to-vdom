@@ -1,4 +1,4 @@
-html-to-vdom [![Build Status](https://travis-ci.org/TimBeyer/html-to-vdom.svg?branch=master)](https://travis-ci.org/TimBeyer/html-to-vdom)
+html-to-vdom [![Build Status](https://travis-ci.org/TimBeyer/html-to-vdom.svg?branch=master)](https://travis-ci.org/TimBeyer/html-to-vdom) [![Coverage Status](https://coveralls.io/repos/TimBeyer/html-to-vdom/badge.svg?branch=coveralls&service=github)](https://coveralls.io/github/TimBeyer/html-to-vdom?branch=coveralls)
 ============
 
 About
