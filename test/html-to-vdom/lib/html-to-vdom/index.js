@@ -145,13 +145,13 @@ describe('html-to-vdom', function () {
 
     describe('when converting HTML containing CDATA', function () {
         it('returns an empty string instead (cdata is unsupported)', function () {
-            var html = '<![CDATA[ Within this Character Data block I can\
-                        use double dashes as much as I want (along with <, &, \', and ")\
-                        *and* %MyParamEntity; will be expanded to the text\
-                        "Has been expanded" ... however, I can\'t use\
-                        the CEND sequence (if I need to use it I must escape one of the\
-                        brackets or the greater-than sign).\
-                        ]]>';
+            var html = ['<![CDATA[ Within this Character Data block I can',
+                        'use double dashes as much as I want (along with <, &, \', and ")',
+                        '*and* %MyParamEntity; will be expanded to the text',
+                        '"Has been expanded" ... however, I can\'t use',
+                        'the CEND sequence (if I need to use it I must escape one of the',
+                        'brackets or the greater-than sign).',
+                        ']]>'].join(' ');
             var converted = convertHTML(html);
             converted.text.should.eql('');
         });
