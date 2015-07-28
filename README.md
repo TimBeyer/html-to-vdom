@@ -1,4 +1,4 @@
-html-to-vdom [![Build Status](https://travis-ci.org/TimBeyer/html-to-vdom.svg?branch=master)](https://travis-ci.org/TimBeyer/html-to-vdom) [![Coverage Status](https://coveralls.io/repos/TimBeyer/html-to-vdom/badge.svg?branch=master&service=github)](https://coveralls.io/github/TimBeyer/html-to-vdom?branch=master)
+html-to-vdom [![Build Status](https://travis-ci.org/TimBeyer/html-to-vdom.svg?branch=master)](https://travis-ci.org/TimBeyer/html-to-vdom) [![Coverage Status](https://coveralls.io/repos/TimBeyer/html-to-vdom/badge.svg?branch=master&service=github)](https://coveralls.io/github/TimBeyer/html-to-vdom?branch=master) [![bitHound Score](https://www.bithound.io/github/TimBeyer/html-to-vdom/badges/score.svg)](https://www.bithound.io/github/TimBeyer/html-to-vdom)
 ============
 
 About
