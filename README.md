@@ -35,7 +35,7 @@ var html = '<div>Foobar</div>';
 
 var vtree = convertHTML(html);
 var createElement = require('virtual-dom/create-element');
-var el = createElement(vTree);
+var el = createElement(vtree);
 document.body.appendChild(el);
 ```
 
@@ -61,7 +61,7 @@ If you have a single key method you can also pass the options first, allowing yo
 var convertHTMLWithKey = convertHTML.bind(null, {
     getVNodeKey: function (attributes) {
         return attributes.id;
-    }   
+    }
 });
 
 convertHTMLWithKey('<div id="foo"></div>');
