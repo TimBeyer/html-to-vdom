@@ -19,14 +19,14 @@
   "homepage": "https://github.com/TimBeyer/html-to-vdom",
   "dependencies": {
     "ent": "2.2.0",
-    "htmlparser2": "3.8.3"
+    "htmlparser2": "3.9.0"
   },
   "devDependencies": {
-    "chai": "3.2.0",
-    "chai-as-promised": "5.1.0",
-    "coveralls": "2.11.3",
-    "istanbul": "0.3.17",
-    "mocha": "2.2.5",
-    "virtual-dom": "2.0.1"
+    "chai": "3.5.0",
+    "chai-as-promised": "5.2.0",
+    "coveralls": "2.11.6",
+    "istanbul": "0.4.2",
+    "mocha": "2.4.4",
+    "virtual-dom": "2.1.1"
   }
 }
