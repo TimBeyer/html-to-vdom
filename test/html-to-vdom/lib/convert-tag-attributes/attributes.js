@@ -45,6 +45,30 @@ describe('convertTagAttributes', function () {
                 });
             });
         });
+
+        describe('when converting an svg', function() {
+            
+            it('sets them', function() {
+                var tag = parseHTML('<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="180.903" width="220.34801" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" />')[0];
+                
+                var converted = convertTagAttributes(tag);
+                converted.should.eql({
+                    attributes: {
+                        'xmlns:rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+                        'xmlns': 'http://www.w3.org/2000/svg',
+                        'xml:space': 'preserve',
+                        'height': '180.903',
+                        'width': '220.34801',
+                        'version': '1.1',
+                        'xmlns:cc': 'http://creativecommons.org/ns#',
+                        'xmlns:dc': 'http://purl.org/dc/elements/1.1/'
+                    }
+                });
+
+            });
+
+        });
+
     });
 
 });
