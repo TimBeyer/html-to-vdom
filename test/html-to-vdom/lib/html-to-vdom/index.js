@@ -210,13 +210,12 @@ describe('html-to-vdom', function () {
 
             var attrs = svg2.properties.attributes;
 
-            console.log(JSON.stringify(svg2));
-            attrs.height.should.eql("32px");
-            attrs.width.should.eql("32px");
-            attrs['aria-labelledby'].should.eql("navigation-svg-title");
-            attrs.viewBox.should.eql("0 0 32 32");
+            attrs.height.should.eql('32px');
+            attrs.width.should.eql('32px');
+            attrs['aria-labelledby'].should.eql('navigation-svg-title');
+            attrs.viewBox.should.eql('0 0 32 32');
 
-            svg2.properties.style['enable-background'].should.eql("new 0 0 32 32");
+            svg2.properties.style['enable-background'].should.eql('new 0 0 32 32');
         });
 
         it('processes title and path correctly', function() {
@@ -224,14 +223,13 @@ describe('html-to-vdom', function () {
             svg2.children.length.should.eql(2);
             var title = svg2.children[0]
             var path = svg2.children[1]
-            
+
             title.tagName.should.eql('title');
             title.properties.id.should.eql('navigation-svg-title');
             
             path.tagName.should.eql('path');
             path.properties.attributes['class'].should.eql('c-small-navigation__icon')
             path.properties.attributes.d.should.eql('M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z');
-            console.log(JSON.stringify(path));
         });
         
     });
