@@ -51,6 +51,16 @@ describe('convertTagAttributes', function () {
                     attributes: {}
                 });
             });
+            it('autocomplete not camelCase', function () {
+                var tag = parseHTML('<input type="text" autocomplete="off">')[0];
+            
+                var converted = convertTagAttributes(tag);
+                converted.should.eql({
+                    autocomplete: 'off',
+                    type: 'text',
+                    attributes: {}
+                });
+            });
         });
     });
 });
