@@ -56,8 +56,8 @@ describe('convertTagAttributes', function () {
             
                 var converted = convertTagAttributes(tag);
                 converted.should.eql({
-                    autocomplete: "off",
-                    type: "text",
+                    autocomplete: 'off',
+                    type: 'text',
                     attributes: {}
                 });
             });
