@@ -129,6 +129,15 @@ describe('html-to-vdom', function () {
             script.children.length.should.eql(1);
             script.children[0].text.should.eql('alert("bar!");');
         });
+        it('converts script tag which contains html entity string', function() {
+            var html = '<div><script>var s = "&quot;";</script></div>';
+            var converted = convertHTML(html);
+            var script = converted.children[0];
+            should.exist(script);
+            script.tagName.should.eql('script');
+            script.children.length.should.eql(1);
+            script.children[0].text.should.eql('var s = "&quot;";');
+        })
     });
 
     describe('when converting HTML containing a style tag', function () {
