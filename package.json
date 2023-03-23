@@ -19,7 +19,7 @@
   "homepage": "https://github.com/TimBeyer/html-to-vdom",
   "dependencies": {
     "ent": "2.2.0",
-    "htmlparser2": "3.9.0"
+    "htmlparser2": "8.0.2"
   },
   "devDependencies": {
     "chai": "3.5.0",
